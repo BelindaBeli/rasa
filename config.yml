@@ -1,0 +1,28 @@
+recipe: default.v1
+
+assistant_id: kloe
+
+language: de
+
+pipeline:
+- name: "WhitespaceTokenizer"
+- name: "CountVectorsFeaturizer"
+- name: "DIETClassifier"
+- name: FallbackClassifier
+  threshold: 0.7
+  ambiguity_threshold: 0.1
+
+policies:
+- name: RulePolicy
+  core_fallback_threshold: 0.4
+  core_fallback_action_name: "utter_fallback_response"
+  enable_fallback_prediction: True
+
+data:
+  nlu:
+    - "data/nlu.yml"
+
+cors:
+  allow_origin: "*"
+  allow_methods: "*"
+  allow_headers: "*"

@@ -1,0 +1,94 @@
+version: "3.1"
+
+nlu:
+- intent: inform_zugangsvoraussetzungen
+  examples: |
+    - Welche Zugangsvoraussetzungen gibt es?
+    - Was sind die Zulassungskriterien?
+    - Welche Voraussetzungen muss ich erfüllen?
+
+- intent: inform_master
+  examples: |
+    - Was zeichnet den Master aus?
+    - Was ist das für ein Master?
+
+- intent: inform_karrieremoeglichkeiten
+  examples: |
+    - Welche Karrieremöglichkeiten gibt es nach dem Master?
+    - Wie sieht es mit Jobchancen nach dem Abschluss aus?
+
+- intent: inform_master_highlights
+  examples: |
+    - Welche Highlights bietet der Master
+    - Was macht den Master besonders?
+
+- intent: inform_pruefungen
+  examples: |
+    - Gibt es viele Prüfungen?
+    - Wie ist die Prüfungsbelastung?
+
+- intent: inform_unterrichtszeiten
+  examples: |
+    - In welchen Zeiträumen findet der Unterricht statt?
+    - Wann beginnt der Unterricht am Freitag?
+
+- intent: inform_englischsprachige_kurse
+  examples: |
+    - Gibt es auch englischsprachige Kurse?
+    - Sind Kurse auch auf Englisch verfügbar?
+
+- intent: inform_schwerpunkte
+  examples: |
+    - Was sind die Schwerpunkte des Studiums?
+    - Welche Studieninhalte sind besonders betont?
+
+- intent: inform_wahlpflichtfaecher
+  examples: |
+    - Gibt es auch Wahlpflichtfächer?
+    - Kann ich meine Kurse auswählen?
+
+- intent: inform_organisationsform
+  examples: |
+    - Wie ist die Organisationsform des Masters?
+    - Ist der Master berufsbegleitend?
+
+- intent: inform_studiendauer
+  examples: |
+    - Wie lange dauert der Master?
+    - Wie viele Semester hat der Master?
+
+- intent: inform_studienplaetze
+  examples: |
+    - Wie viele Studienplätze gibt es?
+    - Wie groß ist die Kapazität für neue Studenten?
+
+- intent: inform_hotel
+  examples: |
+    - Welche Hotels gibt es in der Nähe der FH?
+    - Wo kann ich übernachten?
+
+- intent: inform_anbindung
+  examples: |
+    - Wie lange geht man vom Bahnhof zur FH?
+    - Wie kann man öffentlich anreisen?
+
+- intent: inform_hallo
+  examples: |
+    - Hallo
+    - Hey
+    - Hi
+    - Grüß dich
+    - Grüß Gott
+
+- intent: inform_danke
+  examples: |
+    - Danke
+    - Thx
+    - Tausend Dank
+
+- intent: inform_tschau
+  examples: |
+    - Tschüss
+    - Tschau
+    - Auf Wiedersehen
+    - Bye

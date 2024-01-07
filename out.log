@@ -1,0 +1,928 @@
+2023-11-26 16:19:01,495 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-11-26 16:19:02,039 [INFO ]  Loading model models\20231126-161613-snow-source.tar.gz...
+2023-11-26 16:19:12,799 [INFO ]  Rasa server is up and running.
+2023-11-26 16:19:12,801 [ERROR]  Unable to start server
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\sanic\server\runners.py", line 133, in serve
+    http_server = loop.run_until_complete(server_coroutine)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1494, in create_server
+    raise OSError(err.errno, 'error while attempting '
+OSError: [Errno 10048] error while attempting to bind on address ('0.0.0.0', 5005): normalerweise darf jede socketadresse (protokoll, netzwerkadresse oder anschluss) nur jeweils einmal verwendet werden
+2023-11-26 16:19:40,827 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-11-26 16:19:41,376 [INFO ]  Loading model models\20231126-161613-snow-source.tar.gz...
+2023-11-26 16:19:53,450 [INFO ]  Rasa server is up and running.
+2023-11-26 16:23:48,106 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:23:48,108 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:23:52,234 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:23:52,262 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:23:56,346 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:23:56,347 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:24:00,437 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:24:00,439 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:24:04,553 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:24:04,554 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:24:08,618 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:24:08,619 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:24:12,731 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:24:12,733 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:24:16,827 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:24:16,829 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:24:20,062 [ERROR]  [[31m[1merror    [0m] [1mrest.message.received.timeout [0m [36mtext[0m=[35mL[0m
+2023-11-26 16:28:44,945 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-11-26 16:28:45,528 [INFO ]  Loading model models\20231126-161613-snow-source.tar.gz...
+2023-11-26 16:28:57,044 [INFO ]  Rasa server is up and running.
+2023-11-26 16:29:19,585 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:19,586 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:29:23,654 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:23,655 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:29:27,717 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:38,781 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:29:42,890 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:42,890 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:29:46,980 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:46,981 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:29:51,034 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:51,036 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:29:55,100 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:55,101 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:29:59,151 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:29:59,152 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:30:03,204 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:30:03,204 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:30:07,255 [ERROR]  Failed to run custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook'. Is the server running? Error: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+2023-11-26 16:30:07,255 [ERROR]  Encountered an exception while running action 'action_default_fallback'.Bot will continue, but the actions events are lost. Please check the logs of your action server for more information.
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1056, in create_connection
+    raise exceptions[0]
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 1041, in create_connection
+    sock = await self._connect_sock(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\base_events.py", line 955, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\proactor_events.py", line 702, in sock_connect
+    return await self._proactor.connect(sock, address)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 812, in _poll
+    value = callback(transferred, key, ov)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Der Remotecomputer hat die Netzwerkverbindung abgelehnt
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 780, in run
+    response: Any = await self.action_endpoint.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\utils\endpoints.py", line 167, in request
+    async with self.session.request(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 1167, in __aenter__
+    self._resp = await self._coro
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\client.py", line 562, in _request
+    conn = await self._connector.connect(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1209, in _create_direct_connection
+    raise last_exc
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 1178, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:5055 ssl:default [Der Remotecomputer hat die Netzwerkverbindung abgelehnt]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\processor.py", line 960, in _run_action
+    events = await action.run(
+  File "c:\users\belin\appdata\local\programs\python\python39\lib\site-packages\rasa\core\actions\action.py", line 821, in run
+    raise RasaException(
+rasa.shared.exceptions.RasaException: Failed to execute custom action 'action_default_fallback'. Couldn't connect to the server at 'http://localhost:5055/webhook.
+2023-11-26 16:30:07,260 [WARNI]  Circuit breaker tripped. Stopped predicting more actions for sender 'user123'.
+2023-11-26 16:30:57,805 [WARNI]  Circuit breaker tripped. Stopped predicting more actions for sender 'user123'.
+2023-11-26 16:31:12,981 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-11-26 16:31:13,496 [INFO ]  Loading model models\20231126-161613-snow-source.tar.gz...
+2023-11-26 16:31:26,449 [INFO ]  Rasa server is up and running.
+2023-11-26 16:32:03,581 [INFO ]  Starting Rasa server on http://0.0.0.0:5005
+2023-11-26 16:32:04,177 [INFO ]  Loading model models\20231126-161613-snow-source.tar.gz...
+2023-11-26 16:32:16,596 [INFO ]  Rasa server is up and running.
+2023-11-26 16:32:21,884 [WARNI]  Circuit breaker tripped. Stopped predicting more actions for sender 'user123'.

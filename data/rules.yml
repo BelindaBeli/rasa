@@ -1,0 +1,93 @@
+version: "3.1"
+
+rules:
+
+- rule: inform zugangsvoraussetzungen
+  steps:
+  - intent: inform_zugangsvoraussetzungen
+  - action: utter_provide_zugangsvoraussetzungen
+
+- rule: inform master
+  steps:
+  - intent: inform_master
+  - action: utter_provide_master
+
+- rule: inform karrieremoeglichkeiten
+  steps:
+  - intent: inform_karrieremoeglichkeiten
+  - action: utter_provide_karrieremoeglichkeiten
+
+- rule: inform master highlights
+  steps:
+  - intent: inform_master_highlights
+  - action: utter_provide_master_highlights
+
+- rule: inform pruefungen
+  steps:
+  - intent: inform_pruefungen
+  - action: utter_provide_pruefungen
+
+- rule: inform unterrichtszeiten
+  steps:
+  - intent: inform_unterrichtszeiten
+  - action: utter_provide_unterrichtszeiten
+
+- rule: inform englischsprachige kurse
+  steps:
+  - intent: inform_englischsprachige_kurse
+  - action: utter_provide_englischsprachige_kurse
+
+- rule: inform schwerpunkte
+  steps:
+  - intent: inform_schwerpunkte
+  - action: utter_provide_schwerpunkte
+
+- rule: inform wahlpflichtfaecher
+  steps:
+  - intent: inform_wahlpflichtfaecher
+  - action: utter_provide_wahlpflichtfaecher
+
+- rule: inform organisationsform
+  steps:
+  - intent: inform_organisationsform
+  - action: utter_provide_organisationsform
+
+- rule: inform studiendauer
+  steps:
+  - intent: inform_studiendauer
+  - action: utter_provide_studiendauer
+
+- rule: inform studienplaetze
+  steps:
+  - intent: inform_studienplaetze
+  - action: utter_provide_studienplaetze
+
+- rule: inform anbindung
+  steps:
+  - intent: inform_anbindung
+  - action: utter_provide_anbindung
+
+- rule: inform hotel
+  steps:
+  - intent: inform_hotel
+  - action: utter_provide_hotel
+
+- rule: inform hallo
+  steps:
+  - intent: inform_hallo
+  - action: utter_provide_hallo
+
+- rule: inform danke
+  steps:
+  - intent: inform_danke
+  - action: utter_provide_danke
+
+- rule: inform tschau
+  steps:
+  - intent: inform_tschau
+  - action: utter_provide_tschau
+
+- rule: inform fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback_response

@@ -1,0 +1,79 @@
+version: "3.1"
+
+intents:
+  - inform_zugangsvoraussetzungen
+  - inform_master
+  - inform_karrieremoeglichkeiten
+  - inform_master_highlights
+  - inform_pruefungen
+  - inform_unterrichtszeiten
+  - inform_englischsprachige_kurse
+  - inform_schwerpunkte
+  - inform_wahlpflichtfaecher
+  - inform_organisationsform
+  - inform_studiendauer
+  - inform_studienplaetze
+  - inform_anbindung
+  - inform_hotel
+  - inform_hallo
+  - inform_danke
+  - inform_tschau
+
+responses:
+  utter_provide_zugangsvoraussetzungen:
+  - text: "Die Zugangsvoraussetzungen sind ein abgeschlossenes und facheinschlägiges Bachelorstudium mit mind. 10 ECTS Informatik und 10 ECTS Wirtschaft/Management, berufspraktische Erfahrung und gute Englischkenntnisse."
+  
+  utter_provide_master:
+  - text: "Der Masterstudiengang Web Engineering & IT Solutions konzentriert sich auf den Kompetenzaufbau zur Planung und Entwicklung von komplexen web-basierten Anwendungen, sowie koordinierende, beratende oder leitende Funktionen im Bereich des technischen Managements."
+  
+  utter_provide_karrieremoeglichkeiten:
+  - text: "Berufsfelder nach dem Master sind Medienagenturen & web-orientierte Unternehmen, Projektleitung/technisches Management für komplexe Web-Projekte und -Anwendungen, Strategische Entwicklung web-basierter Geschäftsmodelle und Innovationen, Leitung Softwareentwicklung komplexer web-basierter Systeme, IT Consulting."
+  
+  utter_provide_master_highlights:
+  - text: "Die Highlights des Masters sind Top Karrierechancen durch Kombination von Technik und Management, Know-how-Aufbau für embedded Systems und komplexe web-basierte Anwendungen, Praxisorientiertes Spezialwissen z.B. in Cloud-Diensten, CMS, eCommerce, CRM, DMS und AR/VR, Management von Entwicklungs- und Einführungsprozessen komplexer Softwaresysteme, Individuell wählbare Vertiefungen und eine Studienreise."
+  
+  utter_provide_pruefungen:
+  - text: "Dieser Master hat deutlich weniger Prüfungen als die meisten Master und basiert auf praxisorientierter Projektarbeit."
+  
+  utter_provide_unterrichtszeiten:
+  - text: "Der Unterricht in diesem Master findet in folgenden Zeiträumen statt: Freitag 14-20:45 und Samstag 8:45-16:30, wobei auf 50% Online-Lehre (synchron) gesetzt wird."
+  
+  utter_provide_englischsprachige_kurse:
+  - text: "Dieser Master hat einen Anteil von 33% an englischsprachigen Kursen."
+  
+  utter_provide_schwerpunkte:
+  - text: "Dieser Master zeichnet sich durch folgende Schwerpunkte aus: Engineering, IT-Systeme, Praxistransfer & Empirie, web-basierte Systeme."
+  
+  utter_provide_wahlpflichtfaecher:
+  - text: "Dieser Master bietet die Wahl aus 3 der folgenden Wahlpflichtfächer: Datenvisualisierung & Visual Analytics, Quantitatives Prozess- und Qualitätsmanagement (Six Sigma), Mensch-Computer Interaktion, Agile Produktentwicklung, Trends in Smart Products, Trends in Web-Technologies, Trends in Data Science, Trends in ERP, Anwendungsorientierte Analyseplattformen, Business-Plattformen & Cloud Computing, Internet of Things, Prozessautomatisierung"
+  
+  utter_provide_organisationsform:
+  - text: "Dieser Master ist berufsbegleitend und findet daher an Wochenenden statt."
+  
+  utter_provide_studiendauer:
+  - text: "Dieser Master streckt sich über 4 Semester also 2 Jahre Regelstudienzeit."
+  
+  utter_provide_studienplaetze:
+  - text: "Dieser Master hat 20 Studienplätze zu vergeben."
+
+  utter_provide_hotel:
+  - text: "Sollten Sie mit dem Auto anreisen, bietet sich der Lanthalerhof an mit einem Preis von 42€ für Studenten. Bei öffentlicher Anreise ist der Kufsteinerhof die beste Variante mit 75€."
+
+  utter_provide_anbindung:
+  - text: "Die FH Kufstein ist über den Bahnhof Kufstein leicht erreichbar. Die Gehzeit beträgt ca. 10 Minuten."
+
+  utter_provide_tschau:
+  - text: "Auf Wiedersehen!"
+
+  utter_provide_danke:
+  - text: "Sehr gerne, wie kann ich dir noch helfen?"
+
+  utter_provide_hallo:
+  - text: "Hallo, wie kann ich dir helfen?"
+
+  utter_fallback_response:
+  - text: "Entschuldigung, ich habe das nicht verstanden. Kannst du das anders formulieren? Eventuell kann ich diese Frage auch nicht beantworten."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
